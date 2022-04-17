@@ -2,6 +2,8 @@
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
+$dbLocal = require __DIR__ . '/db.php';
+$db = array_merge($db, $dbLocal);
 
 $config = [
     'id' => 'basic',
