@@ -82,9 +82,6 @@ export default {
       })
     },
     setErrors(v) {
-      console.log(
-          v, this.$refs.form
-      )
       this.$refs.form.setErrors(v);
     },
   }
