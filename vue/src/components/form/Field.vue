@@ -4,11 +4,12 @@
       <b>{{ label }}</b>
     </label>
     <div class="col-sm-8">
-      <ValidationProvider v-slot="v" :rules="rules">
+      <ValidationProvider v-slot="v" :rules="rules" :vid="vid">
         <input
             :value="value"
-            @input="$emit('input', $event.target.value)"
             :type="type"
+            :name="label"
+            @input="$emit('input', $event.target.value)"
             class="form-control"
         />
         <div v-if="v.errors[0]" class="error">{{ v.errors[0] }}</div>
@@ -31,13 +32,15 @@ export default {
       type: String,
       default: () => "text",
     },
+    vid: String
   },
   computed: {
     required() {
       return this.rules.match(/required/)
     }
   }
-};
+}
+;
 </script>
 
 <style scoped>

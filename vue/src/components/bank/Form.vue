@@ -1,13 +1,35 @@
 <template>
   <ValidationObserver ref="form" v-slot="{ invalid }">
     <form @submit.prevent="submit">
-      <Field v-model="name" label="Name" rules="required|min:2|max:128"/>
-      <Field v-model="interest_rate" label="Interest Rate" type="number"
-             rules="required|double|min_value:0.01|max_value:100"/>
-      <Field v-model="max_loan" label="Max Loan" type="number" rules="required|integer|min_value:1"/>
-      <Field v-model="down_payment" label="Min Down Payment" type="number" :rules="downPaymentRules"/>
-      <Field v-model="loan_term" label="Loan Term" type="number" rules="required|integer|min_value:1|max_value:360"/>
-
+      <Field v-model="name" vid="name" label="Name" rules="required|min:2|max:128"/>
+      <Field
+          v-model="interest_rate"
+          vid="interest_rate"
+          label="Interest Rate"
+          type="number"
+          rules="required|double|min_value:0.01|max_value:100"
+      />
+      <Field
+          v-model="max_loan"
+          vid="max_loan"
+          label="Max Loan"
+          type="number"
+          rules="required|integer|min_value:1"
+      />
+      <Field
+          v-model="down_payment"
+          vid="down_payment"
+          label="Min Down Payment"
+          type="number"
+          :rules="downPaymentRules"
+      />
+      <Field
+          v-model="loan_term"
+          vid="loan_term"
+          label="Loan Term"
+          type="number"
+          rules="required|integer|min_value:1|max_value:360"
+      />
       <button class="btn btn-primary btn-block" :disabled="invalid">
         Save
       </button>
@@ -50,7 +72,7 @@ export default {
     submit() {
       this.$emit('submit', {
         data: {
-          //name: this.name,
+          name: this.name,
           interest_rate: this.interest_rate,
           max_loan: this.max_loan,
           down_payment: this.down_payment,
@@ -61,7 +83,7 @@ export default {
     },
     setErrors(v) {
       console.log(
-          v
+          v, this.$refs.form
       )
       this.$refs.form.setErrors(v);
     },

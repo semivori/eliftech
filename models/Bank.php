@@ -34,6 +34,7 @@ class Bank extends \yii\db\ActiveRecord
             [['interest_rate', 'down_payment'], 'number'],
             [['max_loan', 'loan_term'], 'integer'],
             [['name'], 'string', 'max' => 128],
+            [['name'], 'unique'],
         ];
     }
 
