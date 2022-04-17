@@ -51,11 +51,11 @@ export default {
   },
   data() {
     return {
-      name: this?.item?.name ?? 'Test Bank',
-      interest_rate: this?.item?.interest_rate ?? 4,
-      max_loan: this?.item?.max_loan ?? 100000,
-      down_payment: this?.item?.down_payment ?? 1000,
-      loan_term: this?.item?.loan_term ?? 120,
+      name: this?.item?.name ?? '',
+      interest_rate: this?.item?.interest_rate ?? null,
+      max_loan: this?.item?.max_loan ?? null,
+      down_payment: this?.item?.down_payment ?? null,
+      loan_term: this?.item?.loan_term ?? null,
     }
   },
   computed: {
