@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     close() {
-      if (this.loading) {
+      if (!this.loading) {
         this.$emit('close')
       }
     }

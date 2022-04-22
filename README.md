@@ -1,32 +1,16 @@
 DEMO: http://eliftech.semivori.ml/
 
-Front end
-------------
-
-- Vue.js 2
-- Vuex
-- VueRouter
-- VeeValidate
-- Bootstrap 4
-
-Back end
-------------
-
-- PHP
-- Yii2
-- MySQL
-
 ### REST API
 
-      GET      /banks:        list all banks page by page;
-      HEAD     /banks:        show the overview information of bank listing;
-      POST     /banks:        create a new bank;
-      GET      /banks/123:    return the details of the bank 123;
-      HEAD     /banks/123:    show the overview information of bank 123;
+      GET      /banks         list all banks page by page;
+      POST     /banks         create a new bank;
+      GET      /banks/123     return the details of the bank 123;
       PATCH    /banks/123     and PUT /banks/123: update the bank 123;
-      DELETE   /banks/123:    delete the bank 123;
-      OPTIONS  /banks:        show the supported verbs regarding endpoint /banks;
-      OPTIONS  /banks/123:    show the supported verbs regarding endpoint /banks/123.
+      DELETE   /banks/123     delete the bank 123;
+      HEAD     /banks         show the overview information of bank listing;
+      HEAD     /banks/123     show the overview information of bank 123;
+      OPTIONS  /banks         show the supported verbs regarding endpoint /banks;
+      OPTIONS  /banks/123     show the supported verbs regarding endpoint /banks/123.
 
 REQUIREMENTS
 ------------
@@ -65,5 +49,21 @@ php yii migrate
 ~~~
 
 ~~~
-cd app && npm install & npm run build
+cd vue && npm install && npm run build
 ~~~
+
+Front end
+------------
+
+- Vue.js 2
+- Vuex
+- VueRouter
+- VeeValidate
+- Bootstrap 4
+
+Back end
+------------
+
+- PHP
+- Yii2
+- MySQL
